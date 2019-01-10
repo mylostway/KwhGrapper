@@ -31,7 +31,7 @@ namespace KwhGrapper.core
 
         private void S_crawler_OnError(object sender, OnErrorEventArgs e)
         {
-            CrawlerDoneHandler?.Invoke(e, null);
+            CrawlerErrHandler?.Invoke(e, null);
         }
 
         #region 常量
@@ -45,6 +45,11 @@ namespace KwhGrapper.core
         /// 邮件发送到
         /// </summary>
         private const string MAIL_TO = "health@kwh.org.mo";
+
+        /// <summary>
+        /// 测试邮箱
+        /// </summary>
+        private const string MAIL_TEST = "359050096@qq.com";
 
         /// <summary>
         /// 邮件标题
@@ -83,6 +88,12 @@ namespace KwhGrapper.core
         /// </summary>
         public event EventHandler CrawlerStopHandler = null;
 
+
+        /// <summary>
+        /// 爬虫异常事件
+        /// </summary>
+        public event EventHandler CrawlerErrHandler = null;
+
         #endregion
 
 
@@ -111,13 +122,16 @@ namespace KwhGrapper.core
             if (string.IsNullOrEmpty(MailBodyFilePath))
             {
                 // error
-                throw new Exception("邮件文件路径不能为空！");
+                CrawlerErrHandler?.Invoke("邮件文件路径不能为空！",null);
+                return;
+                //throw new Exception("邮件文件路径不能为空！");
             }
 
             if (!Directory.Exists(MailBodyFilePath))
             {
                 Directory.CreateDirectory(MailBodyFilePath);
                 m_isFinish = true;
+                CrawlerStopHandler?.Invoke("当前已经没有等待发送的邮件...", null);
                 return;
             }
 
@@ -127,34 +141,46 @@ namespace KwhGrapper.core
             {
                 // handle over
                 m_isFinish = true;
+                CrawlerStopHandler?.Invoke("当前已经没有等待发送的邮件...", null);
                 return;
             }
+
+            string mailBody = "";
 
             foreach (var eFile in files)
             {
                 var fName = Path.GetFileName(eFile);
                 var extName = Path.GetExtension(eFile);
-                if (extName.IndexOf("mail") >= 0)
+                if (extName == ".mail")
                 {
                     using (var fs = new FileStream(eFile, FileMode.Open))
                     {
                         using (var sr = new StreamReader(fs))
                         {
-                            var mailBody = sr.ReadToEnd();
-
-                            MailSentCallBackHandler?.Invoke(mailBody, null);
-
-                            if (MyMailHelper.Instance.Send(MAIL_FROM, MAIL_TO, MAIL_TITLE, mailBody))
-                            {
-                                // 邮件发送完成之后，将该邮件迁移到备份目录，防止多次发送，且自动备份曾经请求内容以便核对
-                                var backUpDir = $"{MailBackupPathPrefix}/{DateTime.Now.ToString("yyyyMMdd")}";
-                                if (!Directory.Exists(MailBackupPathPrefix))
-                                {
-                                    Directory.CreateDirectory(backUpDir);
-                                }
-                                File.Move(eFile, $"{backUpDir}/{fName}.bak");
-                            }
+                            mailBody = sr.ReadToEnd();
                         }
+                    }
+
+                    var mailTo = MAIL_TO;
+
+                    // 纯测试，无实际用途
+                    if (AppRunConfigs.Instance.IsSingleTestMode) mailTo = MAIL_TEST;
+
+                    if (MyMailHelper.Instance.Send(MAIL_FROM, mailTo, MAIL_TITLE, mailBody))
+                    {
+                        // 邮件发送完成之后，将该邮件迁移到备份目录，防止多次发送，且自动备份曾经请求内容以便核对
+                        var backUpDir = $"{MailBackupPathPrefix}/{DateTime.Now.ToString("yyyyMMdd")}";
+                        if (!Directory.Exists(MailBackupPathPrefix))
+                        {
+                            Directory.CreateDirectory(backUpDir);
+                        }
+                        File.Move(eFile, $"{backUpDir}/{fName}.bak");
+
+                        MailSentCallBackHandler?.Invoke(mailBody, null);
+                    }
+                    else
+                    {
+                        CrawlerErrHandler?.Invoke("邮件发送失败！", null);
                     }
                 }
             }
@@ -174,7 +200,7 @@ namespace KwhGrapper.core
                 if (eText.IndexOf(TAG_KEY_WORD) >= 0)
                 {
                     // 找到目标了
-                    if (eText.IndexOf("已有") >= 0 || eText.IndexOf("少量") >= 0 || true)
+                    if (eText.IndexOf("已有") >= 0 || eText.IndexOf("少量") >= 0)
                     {
                         //MyMailHelper.Instance.Send(MAIL_FROM,MAIL_TO, MAIL_TITLE, MailBody);
                         HandleMails();
@@ -182,6 +208,32 @@ namespace KwhGrapper.core
                         m_isFinish = true;
                     }
                     break;
+                }
+                else
+                {
+                    // 没有keyword，可能目标网页异常！
+                    CrawlerErrHandler?.Invoke($"网页源代码没有发现keyword：{TAG_KEY_WORD},请检查是否被拦截！", null);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// 邮件内容文件路径
+        /// </summary>
+        private string CheckHtmlFilePath { get; set; } = $"{Directory.GetCurrentDirectory()}/sample.html";
+
+        /// <summary>
+        /// 保存最新抓取的HTML到文件，方便抽检
+        /// </summary>
+        /// <param name="html"></param>
+        private void SaveHtmlToFileForCheck(string html)
+        {
+            using (var stream = new FileStream(CheckHtmlFilePath, FileMode.Create))
+            {
+                using (var sw = new StreamWriter(stream))
+                {
+                    sw.Write(html);
                 }
             }
         }
@@ -191,9 +243,11 @@ namespace KwhGrapper.core
         {
             var strHtml = e.PageSource;
 
-            CrawlerDoneHandler?.Invoke(e, null);
-
             AnaliseHtml(strHtml);
+
+            SaveHtmlToFileForCheck(strHtml);
+
+            CrawlerDoneHandler?.Invoke(e, null);
         }
 
         /// <summary>
@@ -206,20 +260,30 @@ namespace KwhGrapper.core
         /// </summary>
         private bool m_isFinish = false;
 
+        private Thread m_thread = null;
+
         /// <summary>
         /// 开启任务，默认一分钟查一次
         /// </summary>
         /// <param name="inter"></param>
         public void StartInLoop(int inter = 60 * 1000)
         {
-            var uri = new Uri(CRAW_URL);
-
-            while (!m_isFinish)
+            m_thread = new Thread(new ThreadStart(() =>
             {
-                s_crawler.Start(uri);
+                var uri = new Uri(CRAW_URL);
 
-                Thread.Sleep(inter);
-            }
+                while (!m_isFinish)
+                {
+                    //s_crawler.Start(uri);
+                    // 只在早上6点 到 晚上10点爬取
+                    var hour = DateTime.Now.Hour;
+                    if (hour > 6 && hour < 22) s_crawler.StartSync(uri);
+                    Thread.Sleep(inter);
+                }
+                CrawlerStopHandler?.Invoke("所有任务完成...", null);
+            }));
+
+            m_thread.Start();
         }
 
 
@@ -228,6 +292,10 @@ namespace KwhGrapper.core
         /// </summary>
         public void Stop()
         {
+            if (null != m_thread) m_thread.Join();
+
+            m_thread = null;
+
             m_isFinish = true;
         }
     }

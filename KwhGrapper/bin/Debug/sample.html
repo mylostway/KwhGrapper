@@ -1,0 +1,1223 @@
+<html>
+<head>
+<title>鏡湖醫院</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/gif" href="animated_favicon.gif">
+<style type="text/css">
+<!--
+body {
+	background-image: url(images/index_04.gif);
+	background-repeat: repeat-x;
+}
+.style5 {color: #FF0000; font-weight: bold; font-size: 9pt; }
+-->
+</style>
+<script type="text/javascript" language="javascript">
+
+function getElementsByClassName(classname)
+{
+    var a = [];
+    var re = new RegExp('\b' + classname + '\b');
+    var els = document.all?document.all:document.getElementsByTagName("*");
+    for(var i=0,j=els.length; i<j; i++)
+        if(re.test(els[i].className))a.push(els[i]);
+    return a;
+}
+
+function changeview(src, width, height, nidstr, contag, content){	
+	document.getElementById("viewpic").src =src;
+	document.getElementById("viewpic").width =width;
+	document.getElementById("viewpic").height =height;	
+	
+	
+	for (var i=0 ; i < viewcon.length ;i++)
+	{
+		viewcon[i].style.display = "none";	
+	}
+	nidarr=nidstr.split(",");	
+	var len=nidarr.length;
+	for (var i=0; i<len; i++){
+		if(nidarr[i]==contag) {
+			document.getElementById(contag).style.display="";			
+			document.getElementById("viewcon").style.display = "none";			
+		}
+		else document.getElementById(nidarr[i]).style.display = "none";
+	}
+ 
+}
+
+function changeview2(src, width, height, nidstr,contag){
+	//alert(knowcon[nid]);
+	document.getElementById("viewpic2").src =src;
+	document.getElementById("viewpic2").width =width;
+	document.getElementById("viewpic2").height =height;
+	nidarr=nidstr.split(",");	
+	var len=nidarr.length;
+	for (var i=0; i<len; i++){
+		if(nidarr[i]==contag) {
+			document.getElementById(contag).style.display="";			
+			document.getElementById("viewcon2").style.display = "none";			
+		}
+		else document.getElementById(nidarr[i]).style.display="none";
+	}
+}
+
+function changeview3(src, width, height, nidstr,contag){
+	//alert(knowcon[nid]);
+	document.getElementById("viewpic3").src =src;
+	document.getElementById("viewpic3").width =width;
+	document.getElementById("viewpic3").height =height;
+	nidarr=nidstr.split(",");	
+	var len=nidarr.length;
+	for (var i=0; i<len; i++){
+		if(nidarr[i]==contag) {
+			document.getElementById(contag).style.display="";			
+			document.getElementById("viewcon3").style.display = "none";			
+		}
+		else document.getElementById(nidarr[i]).style.display="none";
+	}
+}
+
+function changeview4(src, width, height, nid , content){	
+	document.getElementById("viewpic").src =src;
+	document.getElementById("viewpic").width =width;
+	document.getElementById("viewpic").height =height;	
+
+	var viewcon = getElementsByClassName('viewcon');
+	
+	for (var i=0 ; i < viewcon.length ;i++)
+	{
+		viewcon[i].style.display = "none";	
+	}
+	
+	//document.getElementById('viewnid_new').innerHTML="<a href='news%20info.php?nid="+nid+"' id='viewnid_new' name='viewnid_new' class='viewcon' >"+content+"</a> ";
+	document.getElementById('viewnid_new').innerHTML=content;
+	document.getElementById('viewnid_new').style.display = "block";	
+	
+
+	
+		
+}
+
+
+
+
+</script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('images/mune_06.gif','images/mune_07.gif','images/mune_08.gif','images/mune_09.gif','images/mune_10.gif','images/mune_11.gif','images/mune_12.gif')">
+
+<div id="ind_top">
+	<table width="959" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+		<td>﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="JavaScript">
+<!--
+function mmLoadMenus() {
+  if (window.mm_menu_1109190320_0) return;
+  window.mm_menu_1109190320_0 = new Menu("root",31,18,"",12,"#000000","#FFFFFF","#CCCCCC","#000084","left","middle",3,0,1000,-5,7,true,false,true,0,true,true);
+  mm_menu_1109190320_0.addMenuItem("1");
+  mm_menu_1109190320_0.addMenuItem("2");
+   mm_menu_1109190320_0.hideOnMouseOut=true;
+   mm_menu_1109190320_0.bgColor='#555555';
+   mm_menu_1109190320_0.menuBorder=1;
+   mm_menu_1109190320_0.menuLiteBgColor='#FFFFFF';
+   mm_menu_1109190320_0.menuBorderBgColor='#777777';
+
+                      window.mm_menu_1109192142_0 = new Menu("root",196,22,"",12,"#2A6F93","#FFFFFF","#FFFFFF","#9B9BFF","left","middle",3,0,500,-5,7,true,true,true,0,false,false);
+  mm_menu_1109192142_0.addMenuItem("體檢網上預約","location='booking.php'");
+  //mm_menu_1109192142_0.addMenuItem("查詢醫生","location='Adviser doctor.php'");
+  mm_menu_1109192142_0.addMenuItem("第一門診服務","location='first outpatient services.php'");
+  mm_menu_1109192142_0.addMenuItem("第二門診服務","location='second outpatient services.php'");
+  mm_menu_1109192142_0.addMenuItem("醫療中心","location='medical center.php'");
+  mm_menu_1109192142_0.addMenuItem("急診服務","location='emergency services.php'");
+  mm_menu_1109192142_0.addMenuItem("氹仔醫療中心","location='tz medical center.php'");
+  mm_menu_1109192142_0.addMenuItem("臨床診斷服務","location='Clinical Diagnosis services.php'");
+  mm_menu_1109192142_0.addMenuItem("住院服務","location='housing services.php'");
+  mm_menu_1109192142_0.addMenuItem("霍英東樓特約專科門診","location='FYD/index.html'");
+  mm_menu_1109192142_0.addMenuItem("專科護理指導服務","location='Hypertension.php'");
+  mm_menu_1109192142_0.addMenuItem("社區護理外展服務","location='OutDoorService.php'");
+   mm_menu_1109192142_0.hideOnMouseOut=true;
+   mm_menu_1109192142_0.bgColor='#0C769A';
+   mm_menu_1109192142_0.menuBorder=1;
+   mm_menu_1109192142_0.menuLiteBgColor='#FFFFFF';
+   mm_menu_1109192142_0.menuBorderBgColor='#0C769A';
+  window.mm_menu_1109192653_0 = new Menu("root",196,22,"",12,"#2A6F93","#FFFFFF","#FFFFFF","#9B9BFF","left","middle",3,0,500,-5,7,true,true,true,0,false,false);
+  /*
+   mm_menu_1109192653_0.addMenuItem("顧問醫生","location='Adviser doctor.php'");
+   mm_menu_1109192653_0.addMenuItem("主任顧問醫生","location='Adviser doctor1.php'");
+   mm_menu_1109192653_0.addMenuItem("副主任顧問醫生","location='Adviser doctor2.php'");
+  mm_menu_1109192653_0.addMenuItem("專科/主治醫生","location='Attending doctor.php'");
+  mm_menu_1109192653_0.addMenuItem("住院醫生","location='hos doctor.php'");
+  */
+  
+  mm_menu_1109192653_0.addMenuItem("顧問醫生","location='ShowDr/Drintroduce.aspx?Drlvl=顧問'");
+  mm_menu_1109192653_0.addMenuItem("主任顧問醫生","location='ShowDr/Drintroduce.aspx?Drlvl=主任顧問醫生'");
+   mm_menu_1109192653_0.addMenuItem("副主任顧問醫生","location='ShowDr/Drintroduce.aspx?Drlvl=副主任顧問醫生'");
+  mm_menu_1109192653_0.addMenuItem("專科/主治醫生","location='ShowDr/Drintroduce.aspx?Drlvl=主治醫生'");
+  mm_menu_1109192653_0.addMenuItem("住院醫生","location='ShowDr/Drintroduce.aspx?Drlvl=住院醫生'");
+   mm_menu_1109192653_0.hideOnMouseOut=true;
+   mm_menu_1109192653_0.bgColor='#0C769A';
+   mm_menu_1109192653_0.menuBorder=1;
+   mm_menu_1109192653_0.menuLiteBgColor='#FFFFFF';
+   mm_menu_1109192653_0.menuBorderBgColor='#0C769A';
+window.mm_menu_1109201431_0 = new Menu("root",196,22,"",12,"#2A6F93","#FFFFFF","#FFFFFF","#9B9BFF","left","middle",3,0,500,-5,7,true,true,true,0,false,false);
+  mm_menu_1109201431_0.addMenuItem("鏡湖歷史","location='KW_BG_02.php'");
+  mm_menu_1109201431_0.addMenuItem("今日鏡湖","location='KW_BG_03.php'");
+  mm_menu_1109201431_0.addMenuItem("展望將來","location='KW_BG_04.php'");
+  mm_menu_1109201431_0.addMenuItem("人員招聘","location='KW_BG_05.php'");
+  mm_menu_1109201431_0.addMenuItem("位置及交通","location='kwmap.php'");
+   mm_menu_1109201431_0.hideOnMouseOut=true;
+   mm_menu_1109201431_0.bgColor='#0C769A';
+   mm_menu_1109201431_0.menuBorder=1;
+   mm_menu_1109201431_0.menuLiteBgColor='#FFFFFF';
+   mm_menu_1109201431_0.menuBorderBgColor='#0C769A';
+  window.mm_menu_1109192655_0 = new Menu("root",196,22,"",12,"#2A6F93","#FFFFFF","#FFFFFF","#9B9BFF","left","middle",3,0,500,-5,7,true,true,true,0,false,false);
+   mm_menu_1109192655_0.addMenuItem("新闻短信","location='messages.php'");
+  mm_menu_1109192655_0.addMenuItem("鏡湖通訊","location='news list.php'");
+  mm_menu_1109192655_0.addMenuItem("本期鏡湖通訊","location='new news.php'");
+  mm_menu_1109192655_0.addMenuItem("圖片展覽","location='pictures list.php'");
+   mm_menu_1109192655_0.hideOnMouseOut=true;
+   mm_menu_1109192655_0.bgColor='#0C769A';
+   mm_menu_1109192655_0.menuBorder=1;
+   mm_menu_1109192655_0.menuLiteBgColor='#FFFFFF';
+   mm_menu_1109192655_0.menuBorderBgColor='#0C769A';
+window.mm_menu_1109192654_0 = new Menu("root",196,22,"",12,"#2A6F93","#FFFFFF","#FFFFFF","#9B9BFF","left","middle",3,0,500,-5,7,true,true,true,0,false,false);
+   mm_menu_1109192654_0.addMenuItem("醫學新知","location='new knowledge.php'");
+   mm_menu_1109192654_0.addMenuItem("鏡湖醫學","location='KWMedicineList.php'");
+   mm_menu_1109192654_0.addMenuItem("2019年 1月份醫學常識講座","location='talk.php?year=2019&month=1'");
+   mm_menu_1109192654_0.addMenuItem("2018年12月份醫學常識講座","location='talk.php?year=2018&month=12'");
+   mm_menu_1109192654_0.addMenuItem("2018年11月份醫學常識講座","location='talk.php?year=2018&month=11'");
+   mm_menu_1109192654_0.addMenuItem("2018年10月份醫學常識講座","location='talk.php?year=2018&month=10'");
+//   mm_menu_1109192654_0.addMenuItem("2018年9月份醫學常識講座","location='talk.php?year=2018&month=9'");
+ //  mm_menu_1109192654_0.addMenuItem("2018年8月份醫學常識講座","location='talk.php?year=2018&month=8'");
+ //  mm_menu_1109192654_0.addMenuItem("2018年7月份醫學常識講座","location='talk.php?year=2018&month=7'");
+
+
+
+
+   mm_menu_1109192654_0.addMenuItem("2018年7至12月孕期講座","location='talk.php?year=2018&month=G2'");
+   mm_menu_1109192654_0.addMenuItem("2019年1至 7月孕期講座","location='talk.php?year=2019&month=G1'");
+
+
+   mm_menu_1109192654_0.hideOnMouseOut=true;
+   mm_menu_1109192654_0.bgColor='#0C769A';
+   mm_menu_1109192654_0.menuBorder=1;
+   mm_menu_1109192654_0.menuLiteBgColor='#FFFFFF';
+   mm_menu_1109192654_0.menuBorderBgColor='#0C769A';
+
+mm_menu_1109201431_0.writeMenus();
+} // mmLoadMenus()
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<script language="JavaScript" src="mm_menu.js"></script>
+<script language="JavaScript" src="jquery-1.3.1.min.js"></script>
+<script language="JavaScript" src="jquery-ui.min.js"></script>
+<link type="text/css" href="theme/ui.all.css" rel="stylesheet">
+<script language="JavaScript">
+  $(document).ready(function(){
+
+    //$(".photos").dropShadow(options);
+ 	$('.photos').each(function (index,photo) {
+/* 		var descriptionBar=document.createElement('span');
+		//$(descriptionBar).addClass('descriptionText');
+		$(descriptionBar).css('height',$(photo).height());
+		var descriptionText=document.createElement('div');
+		descriptionText.appendChild(document.createTextNode(photo.alt));
+		descriptionBar.appendChild(descriptionText);
+		$(photo).before($(descriptionBar));
+		$(photo).prependTo($(descriptionBar));
+		//$(descriptionBar).append(document.createTextNode(photo.alt)); */
+		
+	
+	
+	
+/*  		var descriptionBar=document.createElement('div');
+		$(descriptionBar).addClass('descriptionBar');
+		$(descriptionBar).css('width',photo.offsetWidth);
+		$(descriptionBar).css('position','absolute');
+		$(descriptionBar).css('left',getAbsoluteLeft(photo));
+		$(descriptionBar).css('top',getAbsoluteTop(photo)+photo.offsetHeight-20);
+		$(descriptionBar).css({opacity:0.7, display:"none"}).fadeIn(400);
+		*/
+		var descriptionText=document.createElement('div');
+		$(descriptionText).addClass('descriptionText');
+		descriptionText.appendChild(document.createTextNode(photo.alt));
+		$(descriptionText).css('width',photo.offsetWidth);
+		$(descriptionText).css('position','absolute');
+		$(descriptionText).css('left',getAbsoluteLeft(photo));
+		$(descriptionText).css('top',getAbsoluteTop(photo)+photo.offsetHeight);
+
+		//$('body').append(descriptionBar); 
+		$('body').append(descriptionText);  
+		
+		
+	}); 
+	
+
+  });
+  
+  	function clearPhotoDescriptions() {
+		$('.descriptionBar, .descriptionText').remove();
+	}
+  
+ function getElementWidth(objectId) {
+     x = document.getElementById(objectId);
+     return x.offsetWidth;
+ }
+ 
+
+ function getAbsoluteLeft(o) {
+     // Get an object left position from the upper left viewport corner
+     //o = document.getElementById(objectId)
+     oLeft = o.offsetLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+         oParent = o.offsetParent    // Get parent object reference
+         oLeft += oParent.offsetLeft // Add parent left position
+         o = oParent
+     }
+     return oLeft
+ }
+
+ function getAbsoluteTop(o) {
+     // Get an object top position from the upper left viewport corner
+     //o = document.getElementById(objectId)
+     oTop = o.offsetTop            // Get top position from the parent object
+     while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+         oParent = o.offsetParent  // Get parent object reference
+         oTop += oParent.offsetTop // Add parent top position
+         o = oParent
+    }
+     return oTop
+ }
+
+
+</script>
+
+<link type="text/css" href="style.css" rel="stylesheet">
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('images/mune_06.gif','images/mune_07.gif','images/mune_08.gif','images/mune_09.gif','images/mune_10.gif','images/mune_11.gif','images/mune_12.gif','images/mune_13.gif')">
+<script language="JavaScript1.2">mmLoadMenus();</script>
+ <table width="959" border="0" cellspacing="0" cellpadding="0" background="images/index_03.gif">
+  <tr>
+  	<td rowspan="3" width="7">&nbsp;</td>
+    <td rowspan="3"><img src="images/1_02.gif" width="235" height="73" alt=""></td>
+    <td height="44"></td>
+	<td rowspan="3" width="7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+      <td ><img src="images/index_05.gif" width="2" height="30" alt=""></td>
+      <td ><a href="index.php" target="_top" onClick="MM_nbGroup('down','group1','index06','images/mune_06.gif',1)" onMouseOver="MM_nbGroup('over','index06','images/mune_06.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_06.gif" alt="" name="index06" width="88" height="29" border="0" onload=""></a></td>
+      
+      <td ><a href="javascript:;" target="_top" onClick="MM_nbGroup('down','group1','index07','images/mune_07.gif',1)" onMouseOver="MM_nbGroup('over','index07','images/mune_07.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_07.gif" alt="" name="index07" width="88" height="29" border="0" onMouseOver="MM_showMenu(window.mm_menu_1109201431_0,1,29,null,'index07')" onMouseOut="MM_startTimeout();" onload=""></a></td>
+      
+      <td ><a href="purpose.php" target="_top" onClick="MM_nbGroup('down','group1','index08','images/mune_08.gif',1)" onMouseOver="MM_nbGroup('over','index08','images/mune_08.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_08.gif" alt="" name="index08" width="88" height="29" border="0" onload=""></a></td>
+     
+      <td><a href="javascript:;" target="_top" onClick="MM_nbGroup('down','group1','index09','images/mune_09.gif',1)" onMouseOver="MM_nbGroup('over','index09','images/mune_09.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_09.gif" alt="" name="index09" width="88" height="29" border="0" onMouseOver="MM_showMenu(window.mm_menu_1109192142_0,1,29,null,'index09')" onMouseOut="MM_startTimeout();" onload=""></a></td>
+      
+      <td><a href="javascript:;" target="_top" onClick="MM_nbGroup('down','group1','index10','images/mune_10.gif',1)" onMouseOver="MM_nbGroup('over','index10','images/mune_10.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_10.gif" alt="" name="index10" width="88" height="29" border="0" onMouseOver="MM_showMenu(window.mm_menu_1109192653_0,1,29,null,'index10')" onMouseOut="MM_startTimeout();" onload=""></a></td>
+      
+      <!--td><a href="new knowledge.php" target="_top" onClick="MM_nbGroup('down','group1','index11','images/mune_11.gif',1)" onMouseOver="MM_nbGroup('over','index11','images/mune_11.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_11.gif" alt="" name="index11" width="88" height="29" border="0" onload=""></a></td-->
+	  <td><a href="javascript:;" target="_top" onClick="MM_nbGroup('down','group1','index11','images/mune_11.gif',1)" onMouseOver="MM_nbGroup('over','index11','images/mune_11.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_11.gif" alt="" name="index11" width="88" height="29" border="0" onMouseOver="MM_showMenu(window.mm_menu_1109192654_0,1,29,null,'index11')" onMouseOut="MM_startTimeout();" onload=""></a></td>
+      <!--td ><a href="news.php" target="_top" onClick="MM_nbGroup('down','group1','index12','images/mune_12.gif',1)" onMouseOver="MM_nbGroup('over','index12','images/mune_12.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_12.gif" alt="" name="index12" width="99" height="29" border="0" onload=""></a></td-->
+	  
+      <td ><a href="javascript:;" target="_top" onClick="MM_nbGroup('down','group1','index12','images/mune_12.gif',1)" onMouseOver="MM_nbGroup('over','index12','images/mune_12.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_12.gif" alt="" name="index12" width="88" height="29" border="0" onMouseOver="MM_showMenu(window.mm_menu_1109192655_0,1,29,null,'index12')" onMouseOut="MM_startTimeout();" onload=""></a></td>
+      
+      <td><a href="FYD/index.html" target="_top" onClick="MM_nbGroup('down','group1','index13','images/mune_13.gif',1)" onMouseOver="MM_nbGroup('over','index13','images/mune_13.gif','',1)" onMouseOut="MM_nbGroup('out')"><img src="images/1_13.gif" alt="" name="index13" width="88" height="29" border="0" onload=""></a></td>
+	  <td><img src="images/分隔符.gif" width="1" height="29" alt=""></td>
+    </tr>
+	
+	</table></td>
+  </tr>
+</table>
+</body> 
+		</td>
+	  </tr>
+	</table>
+</div>
+<div id="ind_content">
+<table width="959" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  	<td width="7">&nbsp;</td>
+     <td width="944" height="239" align="center" valign="middle">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="942" height="235">
+          <param name="movie" value="banner.swf">
+		  <param name="wmode" value="transparent">   
+          <param name="quality" value="high">
+          <embed src="banner.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="942" height="235"></embed>
+      </object></td>
+	  <td width="7">&nbsp;</td>
+  </tr>
+</table>
+</div>
+<div id="content">
+<table width="959" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="7" rowspan="10">&nbsp;</td>
+    <td width="175"  rowspan="10" valign="top">
+		<table width="175" border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+				<!-- <td width="175" height="55" colspan="3" background="images/index_15.gif">  -->
+				<td width="175" height="55" colspan="3" >
+		<table width="175" height="55" border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+				<td width="43" height="30">&nbsp;</td>
+				<td width="132">
+				<!-- <a href="tomorrow_room.php"><span class="style5">2019/01/11醫生出診表</span></a> -->
+                <form name="DrList" action="tomorrow_room.php" method="post">
+				<b>鏡湖醫生出診表 </b><br>
+				<select name = "DlDate">
+				<option value= 2019-01-10>2019-01-10</option>
+				<option value= 2019-01-11>2019-01-11</option>
+				<option value= 2019-01-12>2019-01-12</option>
+				<option value= 2019-01-13>2019-01-13</option>
+				<option value= 2019-01-14>2019-01-14</option>
+				<option value= 2019-01-15>2019-01-15</option>
+				<option value= 2019-01-16>2019-01-16</option>
+				</select>
+				<input type ="submit" value="查詢鏡湖醫生出診表">
+				</form>
+				</td>
+			  </tr>
+			  <tr>
+				<td>&nbsp;</td>
+				<td>
+				 <form name="TDrList" action="tomorrow_troom.php" method="post">
+				<b>氹仔醫生出診表 </b><br>
+				<select name = "DlDate">
+				<option value= 2019-01-10>2019-01-10</option>
+				<option value= 2019-01-11>2019-01-11</option>
+				<option value= 2019-01-12>2019-01-12</option>
+				<option value= 2019-01-13>2019-01-13</option>
+				<option value= 2019-01-14>2019-01-14</option>
+				<option value= 2019-01-15>2019-01-15</option>
+				<option value= 2019-01-16>2019-01-16</option>
+				</select>
+				<input type ="submit" value="查詢氹仔醫生出診表">
+				</form>
+				<!-- <a href="today_room.php"><span class="style5">2019/01/10醫生出診表</span></a> -->
+				</td>
+			  </tr>
+		</table>	
+    </td>
+			  </tr>   
+    <tr>
+  <td colspan="3">
+        <a href="talk.php?year=2019&month=1"><img src="images/talk-btn.gif" width="175" height="55" alt="" border="0"></a>
+    </td> 
+  </tr> 			
+
+  <tr>
+    <td colspan="3"><a href="https://reg.kwh.org.mo"><img src="images/index_117.png" width="175" height="55" alt="" border="0"></a></td>
+  </tr>			
+  
+  <tr>
+    <td colspan="3"><a href="booking.php"><img src="images/index_33.gif" width="175" height="55" alt="" border="0"></a></td>
+  </tr>			  
+ 
+  <tr>
+    <td colspan="3"><a href="Adviser doctor.php"><img src="images/index_35.gif" width="175" height="55" border="0"></a></td>
+  </tr>
+ 
+  <tr>
+    <td colspan="3"><a href="KW_BG_05.php"><img src="images/index_60.gif" width="175" height="55" alt="" border="0"></a></td>
+  </tr>
+
+	<tr>
+    <td colspan="3"><img src="images/index_32.gif" width="175" height="2" alt=""></td>
+  </tr>
+  <tr>
+    <td colspan="3"><img src="images/index_34.gif" width="175" height="2" alt=""></td>
+  </tr>
+
+  <tr>
+    <td colspan="3"><img src="images/index_36.gif" width="175" height="4" alt=""></td>
+  </tr>
+  
+    <tr>
+    <td colspan="3"><img src="images/index_118.png" width="175" height="32" alt=""></td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top"><img src="images/index_38.gif" width="1" height="240" alt=""></td>
+    <td><img src="images/index_120.png" width="173" height="320" alt=""></td>
+    <td rowspan="2" valign="top"><img src="images/index_40.gif" width="1" height="240" alt=""></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3"><img src="images/index_37.gif" width="175" height="32" alt=""></td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top"><img src="images/index_38.gif" width="1" height="240" alt=""></td>
+    <td><img src="images/index_39.gif" width="173" height="255" alt=""></td>
+    <td rowspan="2" valign="top"><img src="images/index_40.gif" width="1" height="240" alt=""></td>
+  </tr>
+  <tr>
+  	<td width="175" height="222"></td>
+  </tr>
+		</table>	
+    </td>
+    <td width="9" rowspan="9" valign="top"><img src="images/index_16.gif" width="9" height="501"></td>
+    
+	<td rowspan="10" valign="top">
+		<table width="761" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td >
+			  <table width="761" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+    			  <td rowspan="7" valign="top">
+                    <table width="375" border="0" cellspacing="0" cellpadding="0">
+                      <!---->
+                      <tr>
+        				<td><img src="images/index_100.gif" width="375" height="34" alt=""></td>
+                      </tr>
+                      <tr>
+        				<td><img src="images/index_28.gif" width="375" height="7" alt=""></td>
+      				  </tr>
+                      <tr>
+    					<td width="375" height="30" align="center" valign="top" background="images/index_30.gif" class="aplah">
+                          <table width="360" border="0">
+  							<tr>
+    						  <td><a href="eyecenter/index.php"><span class="style5">鏡湖醫院眼科中心</span></a> </td>
+    						</tr>
+							 
+							<tr>
+    						  <td><a href="petctcenter/"><span class="style5">正電子電腦斷層雙融掃描(PET/CT)中心</span></a>   </td>
+    						</tr>
+                          </table>
+                        </td>
+                      <tr>
+        				<td><img src="images/index_28.gif" width="375" height="7" alt=""></td>
+      				  </tr>
+    				  </tr>
+                      <!---->
+      				  <tr>
+        				<td>
+                          <table width="375" border="0" cellspacing="0" cellpadding="0">
+  							<tr>
+    						  <td colspan="3"><img src="images/index_17.gif" width="375" height="10" alt=""></td>
+    						</tr>
+  							<tr>
+    						  <td rowspan="2"><img src="images/index_20.gif" width="337" height="24" alt=""></td>
+    						  <td><a href="news%20list.php"><img src="images/index_21.gif" width="29" height="13" border="0"></a></td>
+    						  <td rowspan="2"><img src="images/index_22.gif" width="9" height="24" alt=""></td>
+  							</tr>
+  							<tr>
+    						  <td><img src="images/index_26.gif" width="29" height="11" alt=""></td>
+    						</tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+        				<td><img src="images/index_28.gif" width="375" height="7" alt=""></td>
+      				  </tr>
+      				  <tr>
+        				<td width="375" height="313" colspan="14" rowspan="9" align="center" valign="top" background="images/index_30.gif" class="aplah">
+	  					  <br />
+        				  <table width="93%" border="0" cellpadding="0" cellspacing="0" >
+          					<tr>
+                              <td colspan="4">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+                                  <tr>
+                                    <td>
+                                      <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+                                        <tr>
+                                            <td colspan="4" >
+												<iframe src="movie.html" height="335" width="370" frameborder="0" scrolling=no></iframe><br><br><br><br><br><br>	  								
+                                            </td>
+                                        </tr>
+ 			
+            						    <tr>
+              							  <td width="94" height="94" align="center" valign="top">
+										                                              <img src="attachments/news/2018-12/_thb_0_20181221032228_832.jpg" width="94" height="62" id="viewpic" name="viewpic" />
+                                          
+                                           			  
+			  							  </td>
+              							  <td width="10">&nbsp;</td>
+                                          <td width="216" colspan="2" valign="top" class="font"> 
+                                              <span id="viewnid_new" style="display:;"></span>
+
+                                           						
+                                              <span id="viewcon" style="display:;" class="viewcon">
+                                              <a href="news_info.php?nid=2024" id="viewnid" name="viewnid" class="viewcon" style="display:none;">
+                                                  
+鏡湖醫院與中大附屬三院及香港進匯醫務中心簽訂合作協議。圖為主禮嘉賓與三機構負責人等合照留影。 ...                                              </a>
+                                              </span>
+                                                                                                    <span id="viewcon2024" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2024" class='viewcon'  >			  
+                                                      
+鏡湖醫院與中大附屬三院及香港進匯醫務中心簽訂合作協議。圖為主禮嘉賓與三機構負責人等合照留影。 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2023" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2023" class='viewcon'  >			  
+                                                      慈善會舉行灣區醫療合作協議簽署儀式
+為進一步開展醫療領域的友好合作，配合國家發展戰略，在粵港澳大灣區醫療 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2022" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2022" class='viewcon'  >			  
+                                                      院史編撰工作拉開序幕
+鏡湖醫院自1871年建院以來，經歷了近150年的風雨歷程，由當年的簡陋設備發展到今天，成為一 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2021" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2021" class='viewcon'  >			  
+                                                      慈善會舉辦改革開放四十周年專題報告會
+為進一步認識國情，了解國家改革開放以來取得的偉大成就和未來挑戰，在 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2020" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2020" class='viewcon'  >			  
+                                                      鏡湖輔助生殖中心啟用 造福先天不孕不育患者
+
+鏡湖醫院輔助生殖中心開幕典禮暨醫學研討會，於11月3日下 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2019" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2019" class='viewcon'  >			  
+                                                      社區護理外展服務啟動儀式隆重舉行
+“鏡湖醫院社區護理外展服務啟動儀式暨醫院新服務簡介新聞發佈會”，於10 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2018" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2018" class='viewcon'  >			  
+                                                      身心健康童樂日 推介醫療新項目
+本院在完善原有氹仔醫療中心急診、門診服務基礎上，結合氹仔門診服務需求調查 ...                                                      </a>
+                                                      </span>
+                                                                                                            <span id="viewcon2017" style="display:none;"  class='viewcon' >
+                                                      <a href="news_info.php?nid=2017" class='viewcon'  >			  
+                                                      鏡湖辦肺動脈高壓診治研討會
+“鏡湖醫院肺動脈高壓診治新視野研討會”於10月6日下午2時30分在專科樓14樓演 ...                                                      </a>
+                                                      </span>
+                                                                                                </td>
+                                        </tr>
+            <tr>
+              <td colspan="4" height="5"></td>
+            </tr>
+            <tr>
+              <td colspan="4"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="font">			  
+
+               <tr> 
+                   <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                   <td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/無貨通知20181229.pdf" ><font color="red" size="4"><b>加衛苗(9合1HPV子宮頸癌疫苗)<br>(暫未有貨提供首次注射人士)</b></font></a></td>    
+		      <!--    <td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/加衛苗預約通知20181229.pdf" ><font color="red" size="4"><b>加衛苗(9合1HPV子宮頸癌疫苗)<br>(已有少量貨源提供給首次注射人士)</b></font></a></td>   -->
+                  <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  
+              </tr>  
+
+              <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+					<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1774" ><span onMouseMove="changeview4('images/Lung_Cancer.jpg', 65, 94, 1774,'早期肺癌篩檢活動')"><font color="red" size="4"><b>早期肺癌篩檢活動</b></font></span></a></td>
+                    <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  
+              </tr>  
+
+              <tr> 
+                   <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                  <td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/網上掛號流程指引.pptx" ><font color="red" size="4"><b>網上預約掛號指引(pptx)</b></font></a></td>    
+                  <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  
+              </tr>  
+
+
+              <tr> 
+                   <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                  <td width="243" class="line_td1"> &nbsp;<a href="attachments/movies/網上預約掛號指引.mp4" ><font color="red" size="4"><b>網上預約掛號指引(mp4)</b></font></a></td>    
+                  <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  
+              </tr>  
+
+               <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+					<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1998" ><span onMouseMove="changeview4('images/Outdoor1.jpg', 65, 45, 1774,'本院正式啟動社區護理外展服務')"><font color="red" size="4"><b>本院正式啟動社區護理外展服務</b></font></span></a></td>
+                    <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>    
+               </tr>  	
+
+
+              <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="images/取消電話掛號.jpg"><font color="red" size="4"><span onMouseMove="changeview4('images/取消電話掛號.jpg', 65, 94, 1774,'取消電話掛號')"><b>2018年11月1日起<br>逐步取消電話掛號服務</b></span></font></a></td>
+                    <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  
+              </tr>
+			  
+			 
+
+              <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/20181011五聯疫苗注射通告.pdf"><font color="red" size="3"><span onMouseMove="changeview4('attachments/pdf/兒童五聯疫苗預約通告.jpg', 65, 94, 1774,'兒童五聯疫苗預約通告')"><b>兒童五聯疫苗預約通告</b></span></font></a></td>
+                    <!-- <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  -->
+              </tr>
+
+               			  
+			  
+   		    
+		
+		    <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                    <!-- <td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1774"><span onMouseMove="changeview4('attachments/pdf/breast-pic.jpg', 0, 0,  1774,'早期篩檢活動 協助調查的社區醫生名單')"><font color="red" size="4"><b>早期肺癌篩檢活動<br> 協助調查的社區醫生名單</span></b></font></a></td> -->
+					<!-- <td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/Lung_Cancer_DrList.pdf" ><font color="red" size="3"><span onMouseMove="changeview4('images/Lung_Cancer.jpg', 65, 94, 1774,'早期肺癌篩檢活動協助調查的社區醫生名單')"><b>早期肺癌篩檢活動<br> 協助調查的社區醫生名單</b></span></font></a></td> -->
+					<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1970" ><font color="red" size="4"><span onMouseMove="changeview4('images/子宮內膜異位症-1.jpg', 65, 94, 1774,'本院開設子宮內膜異位症專病門診')"><b>本院開設”子宮內膜異位症”專病門診</b></span></font></a></td>
+					<!-- <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td> -->
+           </tr>  
+		
+		   	
+		    
+		
+	
+			<tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/本院可供非本澳居民使用疫苗的種類.pdf"><font color="red" size="3"><span onMouseMove="changeview4('attachments/pdf/本院可供非本澳居民使用疫苗的種類.png', 65, 94, 1774,'本院可供非本澳居民使用疫苗的種類')"><b>本院可供非本澳居民使用疫苗的種類</b></span></font></a></td>  
+                <!--    <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>   -->
+            </tr>
+
+			<tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/破傷風疫苗短缺通知.pdf"><span onMouseMove="changeview4('attachments/pdf/破傷風疫苗短缺通知.png', 65, 94, 1774,'本院關於破傷風疫苗通知')">本院關於破傷風疫苗通知</span></a></td>
+                  <!--  <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>   -->
+                </tr> 
+			  
+			     <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/百白破.pdf"><span onMouseMove="changeview4('attachments/pdf/百白破.jpg', 65, 94, 1774,'本院關於百白破疫苗通知')">本院關於百白破疫苗通知</span></a></td>
+                  <!--  <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  -->
+                </tr> 
+				
+			    <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+					<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1971" ><span onMouseMove="changeview4('images/樂日海報1006.jpg', 65, 94, 1774,'氹仔身心健康童樂日')">氹仔『身』『心』健康『童』樂日</span></a></td>
+                 <!--   <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>    -->
+                </tr>  
+
+		        <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/逾期取藥通知.pdf"><span onMouseMove="changeview4('attachments/pdf/生殖遺傳諮詢.jpg', 65, 94, 1774,'關於門診病人逾期取藥辦法的通知')">關於門診病人逾期取藥辦法的通知</span></a></td>
+                  <!--  <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td> -->
+                </tr> 
+
+		        <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/本院開設生殖遺傳諮詢門診.doc"><span onMouseMove="changeview4('attachments/pdf/生殖遺傳諮詢.jpg', 65, 94, 1774,'本院開設生殖遺傳諮詢門診')">本院開設"生殖遺傳諮詢"門診</span></a></td>
+                 <!--   <td width="66" class="line_td1"><img src="images/new70-2.gif" width="30" height="15"></td>  -->
+                </tr> 
+
+   
+		        
+
+			  
+			   
+			
+
+			
+               
+			
+			    <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="attachments/pdf/健康檢查中心.pdf"><span onMouseMove="changeview4('attachments/pdf/健康檢查中心.jpg', 65, 94, 1774,'「氹仔健康管理中心」投入使用運作')">「氹仔健康管理中心」投入使用運作</span></a></td>                
+                </tr> 
+			
+                <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+ 					<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1799" ><span onMouseMove="changeview4('images/color_competition.jpg', 65, 94, 1774,'國際兒童節 兒童填色/繪畫比賽 賽果')">兒童節 兒童填色/繪畫比賽 賽果</span></a></td>             
+                </tr> 
+
+
+                <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                    <td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1619"><span onMouseMove="changeview4('', 0, 0,  1619,'暨大為澳培養醫護人才')">暨大為澳培養醫護人才</span></a></td>
+                    <td width="66" class="line_td1"></td>
+                </tr>
+
+                
+                <tr>
+                    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                    <td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1390"><span onMouseMove="changeview4('', 0, 0, 1390,'澳門鏡湖醫院數字化醫院系統招標圓滿完成')">澳門鏡湖醫院數字化醫院系統招標圓滿完成</span></a></td>
+                    <td width="66" class="line_td1">&nbsp;</td>
+                </tr>
+                
+                <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1474"><span onMouseMove="changeview4('attachments/news/2015-07/_thb_0_20150709111152_315.jpg', 65, 94, 1471,'鏡湖六一國際兒童節繪畫填色比賽結果')">鏡湖六一國際兒童節繪畫填色比賽結果</span></a></td>
+                    <td width="66" class="line_td1">&nbsp;</td>
+          		</tr>
+
+                
+                <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=1389"><span onMouseMove="changeview4('', 0, 0, 1389,'調整門診、急診服務時間通知')">調整門診、急診服務時間通知</span></a></td>
+                    <td width="66" class="line_td1">&nbsp;</td>
+          		  </tr>
+                  
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1360"><span onMouseMove="changeview4('attachments/news/2014-11/_thb_0_20141127091957_887.jpg', 94, 51, 1360,'慈善會舉行敬聘馬學章院長儀式')">慈善會舉行敬聘馬學章院長儀式</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>                
+                
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1330"><span onMouseMove="changeview4('attachments/news/2014-09/_thb_0_20140930190825_753.jpg', 94, 53, 1330,'鏡湖慈善會聯歡晚宴賀雙慶')">鏡湖慈善會聯歡晚宴賀雙慶</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr> 
+                    
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1329"><span onMouseMove="changeview4('attachments/news/2014-09/_thb_0_20140929172618_670.jpg', 94, 65, 1329,' 本院舉行第十屆臨床培訓醫生結業禮')">本院舉行第十屆臨床培訓醫生結業禮</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>
+             		      
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1328"><span onMouseMove="changeview4('attachments/news/2014-09/_thb_0_20140929100307_330.jpg', 94, 55, 1328,' 澳門科學技術發展基金訪問鏡湖')">澳門科學技術發展基金訪問鏡湖</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1302"><span onMouseMove="changeview4('attachments/news/2014-08/_thb_0_20140807195549_125.jpg', 94, 62, 1302,'鏡湖醫院慈善會與香港醫院管理局簽署合作協議')">鏡湖醫院慈善會與香港醫院管理局簽署合作協議</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1303"><span onMouseMove="changeview4('attachments/news/2014-08/_thb_0_20140808194237_186.jpg', 76, 94, 1303,'鏡湖慈善會聘請馬學章醫生為鏡湖醫院院長於8月4日到任')">鏡湖慈善會聘請馬學章醫生為鏡湖醫院院長於8月4日到任</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1301"><span onMouseMove="changeview4('', 0, 0, 1301,'鏡湖醫院客戶服務專線')">鏡湖醫院客戶服務專線</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>
+                    
+                    <!--
+                    <tr>
+                        <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+                        <td width="243" class="line_td1"> 
+                            &nbsp;<a href="news info.php?nid=1300"><span onMouseMove="changeview('attachments/news/2014-06/_thb_0_20140620153133_292.jpg', 65, 94, 'viewcon1300,viewcon1298,viewcon1297,viewcon1296,viewcon1295,viewcon1294,viewcon1293,viewcon1292','viewcon1300')">鏡湖六一國際兒童節繪畫填色比賽結果</span></a>
+                        </td>
+                        <td width="66" class="line_td1">&nbsp;</td>
+                    </tr>
+                    -->
+                    
+                                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2024"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221032228_832.jpg', 94, 62, 2024,'','')">封面</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2023"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221032110_492.jpg', 94, 62, 2023,'','')">慈善會舉行灣區醫療合作協議簽署儀式</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2022"><span onMouseMove="changeview4('', 0, 0, 2022,'','')">院史編撰工作拉開序幕</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2021"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221031740_761.jpg', 94, 69, 2021,'','')">慈善會舉辦改革開放四十周年專題報告會</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2020"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221031418_337.jpg', 94, 75, 2020,'','')">鏡湖輔助生殖中心啟用 造福先天不孕不育患者</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2019"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221031039_231.jpg', 94, 62, 2019,'','')">社區護理外展服務啟動儀式隆重舉行</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2018"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221030857_762.jpg', 94, 48, 2018,'','')">身心健康童樂日 推介醫療新項目</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="news info.php?nid=2017"><span onMouseMove="changeview4('attachments/news/2018-12/_thb_0_20181221030705_688.jpg', 94, 62, 2017,'','')">鏡湖辦肺動脈高壓診治研討會</span></a></td>
+            		<td width="66" class="line_td1"> 
+					   &nbsp;第158期
+					</td>
+          		  </tr>
+		  		                    <tr>
+                    <td height="5" colspan="3" class="bg_line"></td>
+                  </tr>
+              </table></td> 
+            </tr>
+          </table></td>
+                  </tr>
+          </table></td>
+          </tr>
+        </table>	</td>
+      </tr>
+    </table></td>
+    
+    <td width="11" rowspan="7" valign="top"><img src="images/index_18.gif" width="11" alt=""></td>
+    
+	<td rowspan="7" valign="top"><table width="375" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="374" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="3"><img src="images/index_19.gif" width="374" height="11" alt=""></td>
+    </tr>
+  <tr>
+    <td rowspan="2"><img src="images/index_23.gif" width="337" height="23" alt=""></td>
+    <td width="29" height="13" align="left"><a href="new knowledge.php"><img src="images/index_24.gif" width="29" height="13" border="0"></a></td>
+    <td rowspan="2"><img src="images/index_25.gif" width="8" height="23" alt=""></td>
+  </tr>
+  <tr>
+    <td width="29" height="10" align="left"><img src="images/index_27.gif" width="29" height="10"></td>
+    </tr>
+</table></td>
+      </tr>
+      <tr>
+        <td><img src="images/index_28.gif" width="375" height="7" alt=""></td>
+      </tr>
+      <tr>
+        <td width="375" height="350" colspan="14" rowspan="9" align="center" valign="top" background="images/index_30.gif" class="aplah">
+	  <br>
+        <table width="93%" border="0" cellpadding="0" cellspacing="0" >
+          <tr><td colspan="4"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="94" height="94" align="center" valign="middle">			  <img src="" width="" height="" id="viewpic2" name="viewpic2" />
+			  			  
+			  </td>
+              <td width="10">&nbsp;</td>
+              <td width="216" colspan="2" valign="top" class="font"><span id="viewcon2" style="display:;"><a href="new knowledge info.php?nid=86" id="viewnid2" name="viewnid2">
+乳牙（一）易患齲因素（二）發病年齡（三）致病因素（四）齲病的控制(五) 齲病的治療
+年輕恒牙
+預防兒童齲齒的臨床指導
+正確刷牙方法
+乳牙在不同年齡齲齒好發部位的特點1～  ...</a></span>
+			  			  <span id="viewconn286" style="display:none;">
+			  <a href="new knowledge info.php?nid=86" >			  
+			  
+乳牙（一）易患齲因素（二）發病年齡（三）致病因素（四）齲病的控制(五) 齲病的治療
+年輕恒牙
+預防兒童齲齒的臨床指導
+正確刷牙方法
+乳牙在不同年齡齲齒好發部位的特點1～  ...</a></span>
+			  			  <span id="viewconn285" style="display:none;">
+			  <a href="new knowledge info.php?nid=85" >			  
+			  一. 腎臟病離我們遠嗎？ 過去10年里，腎臟病的患病人數已經超過1億，但國人知曉率僅12.5% 。從2006年起，每年3月的第二個周四為世界腎臟日。 2014年世界腎臟日主題是“護 ...</a></span>
+			  			  <span id="viewconn284" style="display:none;">
+			  <a href="new knowledge info.php?nid=84" >			  
+			   房顫是最常見的心血管病之一，其發病率隨年齡逐漸升高，八十歲以上人群的發病率達一成以上。房顫最主要的危害是導致心臟內血栓形成，血栓脫落後可 ...</a></span>
+			  			  <span id="viewconn283" style="display:none;">
+			  <a href="new knowledge info.php?nid=83" >			  
+			  基本概念•嬰兒期是指出生後至一周歲之前•嬰兒期是人生長發育的第一個高峰宏量營養素•糖類 供能，谷類及薯類食物 • ...</a></span>
+			  			  <span id="viewconn282" style="display:none;">
+			  <a href="new knowledge info.php?nid=82" >			  
+			  全球每年約一千一百萬人証實患上癌症，有八百萬人死於這種疾病，根據資料统計指出，癌症是澳門的主要疾病，近十年來，其發病率與死亡率均大幅飆升。與全球相比 ...</a></span>
+			  			  <span id="viewconn281" style="display:none;">
+			  <a href="new knowledge info.php?nid=81" >			  
+			  乳腺癌占了每年所有新发恶性肿瘤的10%，占了女性恶性肿瘤的22%，成为了女性最常见的恶性肿瘤。1然而，乳腺良性病变的发生率远远高于恶性肿瘤。良性病变的发病率在女性2 ...</a></span>
+			  			  <span id="viewconn280" style="display:none;">
+			  <a href="new knowledge info.php?nid=80" >			  
+			  婦科腫瘤是一類常見的女性生殖系統腫瘤，也是人體的多發腫瘤。其中婦科惡性腫瘤占女性腫瘤的12%-15%，是嚴重威脅婦女健康和生命的疾病。生殖器惡性腫瘤中女性遠比男 ...</a></span>
+			  			  <span id="viewconn279" style="display:none;">
+			  <a href="new knowledge info.php?nid=79" >			  
+			  《黃帝內經》曰：“春三月，此謂發陳。天地俱生，萬物以榮。夜臥早起，廣步于庭，披發緩行，以便志生。”這是說，春天萬物復蘇，應該早睡早起，散步緩行，可以使精神愉悅、身體健康。 ...</a></span>
+			  			  </td>
+			  
+            </tr>
+            <tr>
+              <td colspan="4" height="5"></td>
+            </tr>
+            <tr>
+              <td colspan="4"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="font">
+          		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=86"><span onMouseMove="changeview2('', 0, 0, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn286')">齊來保護牙齒</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-10-24</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=85"><span onMouseMove="changeview2('', 0, 0, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn285')">關愛您的腎臟</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-10-24</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=84"><span onMouseMove="changeview2('attachments/newknowledge/2014-07/_thb_0_20140708175417_777.jpg', 94, 65, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn284')">鏡湖新技術治心臟病 - 左心耳封堵術有效防血栓中風</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-07-08</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=83"><span onMouseMove="changeview2('attachments/newknowledge/2014-04/_thb_0_20140423192115_835.jpg', 94, 31, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn283')">BB餵養話你知</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-04-23</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=82"><span onMouseMove="changeview2('', 0, 0, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn282')">認識結腸直腸癌</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-04-23</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=81"><span onMouseMove="changeview2('', 0, 0, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn281')">認識乳腺微創旋切術</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-04-23</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=80"><span onMouseMove="changeview2('', 0, 0, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn280')">婦科常見惡性腫瘤的防治</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-04-23</td>
+          		  </tr>
+		  		  				 
+                  <tr>
+				    <td width="8" height="20"><img src="images/IMG_64.gif" width="4" height="4"></td>
+            		<td width="243" class="line_td1"> &nbsp;<a href="new knowledge info.php?nid=79"><span onMouseMove="changeview2('', 0, 0, 'viewconn286,viewconn285,viewconn284,viewconn283,viewconn282,viewconn281,viewconn280,viewconn279','viewconn279')">春季食療養生</span></a></td>
+            		<td width="66" class="line_td1"> &nbsp;2014-04-23</td>
+          		  </tr>
+		  		                    <tr>
+                    <td height="5" colspan="3" class="bg_line"></td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+                  </tr>
+          </table></td>
+          </tr>
+        <!--/table>	</td>
+      </tr-->
+      
+      <!---->
+      <tr>
+        <td><img src="images/index_28.gif" width="375" height="7" alt=""></td>
+      </tr>
+      <tr>
+        <td><table width="374" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="3"><img src="images/index_102.gif" width="374" height="11" alt=""></td>
+    </tr>
+  <tr>
+    <td rowspan="2"><img src="images/index_103.gif" width="337" height="23" alt=""></td>
+    <td width="29" height="13" align="left"><!--a href="medecodes list.php"--><img src="images/index_24.gif" width="29" height="13" border="0"><!--/a--></td>
+    <td rowspan="2"><img src="images/index_25.gif" width="8" height="23" alt=""></td>
+  </tr>
+  <tr>
+    <td width="29" height="10" align="left"><img src="images/index_27.gif" width="29" height="10"></td>
+    </tr>
+</table></td>
+      </tr>
+      <tr>
+        <td><img src="images/index_28.gif" width="375" height="7" alt=""></td>
+      </tr>
+      <tr>
+        <td width="375" height="250" colspan="14" rowspan="9" align="center" valign="top" background="images/index_30.gif" class="aplah">
+	  <br>
+        <table width="93%" border="0" cellpadding="0" cellspacing="0" >
+          <tr><td colspan="4"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+		    <tr><td><a href="health_book.php" target="_blank" ><img src="download\health22.jpg" width="150" height="215"></a> &nbsp;<a href="health_book.php" target="_blank"  > <img src="download\health23.jpg" width="150" height="215"></a> </td></tr>
+		    <tr><td></td>
+		     </tr>
+            <!--tr>
+              <td width="94" height="94" align="center" valign="middle">			  <img src="" width="" height="" id="viewpic3" name="viewpic3" />
+			  			  
+			  </td>
+              <td width="10">&nbsp;</td>
+              <td width="216" colspan="2" valign="top" class="font"><span id="viewcon3" style="display:;"><a href="medecodes info.php?nid=" id="viewnid3" name="viewnid3"></a></span>
+			  			  </td>
+			  
+            </tr>
+            <tr>
+              <td colspan="4" height="5"></td>
+            </tr>
+            <tr>
+              <td colspan="4"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="font">
+          		                    <tr>
+                    <td height="5" colspan="3" class="bg_line"></td>
+                  </tr>
+              </table></td>
+            </tr-->
+          </table></td>
+                  </tr>
+          </table></td>
+          </tr>
+      </table>	</td>
+      </tr>
+      <!---->
+      
+    </table>	 <table>
+	  <tr><td width="375" > <img src="images/title_download.gif" > </td></tr>
+	  <tr><td width="375" > &nbsp;&nbsp;&nbsp;&nbsp;  <a href="download/authorization_letter.pdf">病人授權書</a> </td></tr>
+	  <tr><td width="375" > &nbsp;&nbsp;&nbsp;&nbsp;  <a href="download/鏡湖醫起病歷資料申請表_保險專用_中英2018-10.pdf">鏡湖醫院病歷資料申請表_保險專用_中英</a> </td></tr>
+	  <tr><td width="375" > &nbsp;&nbsp;&nbsp;&nbsp;  <a href="download/鏡湖醫起病歷資料申請表_非保險用_中英2018-10.pdf">鏡湖醫院病歷資料申請表_非保險用_中英</a> </td></tr>
+ 	  <tr><td width="375" > &nbsp;&nbsp;&nbsp;&nbsp;  <a href="download/鏡湖醫起病歷資料申請及領取授權書中文版2018-10.pdf">鏡湖醫院病歷資料申請及領取授權書中文版</a> </td></tr>
+	  <tr><td width="375" > &nbsp;&nbsp;&nbsp;&nbsp;  <a href="download/鏡湖醫起病歷資料申請及領取授權書英文版_Kiang Wu Hospital Authorization for collection of Medical Records_2018-10.pdf">Kiang Wu Hospital Authorization for collection of Medical Records</a> </td></tr>
+
+	  <tr><td width="375" > &nbsp;&nbsp;&nbsp;&nbsp;  </td></tr>
+	 </table></td></tr></table>
+	      <tr>
+          <td height="10" bgcolor="#F3F4F4"></td>
+          </tr>
+          <tr><td height="46" bgcolor="#F3F4F4"><!--table width="761" height="46" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td bgcolor="#F3F4F4" width="98" align="center" valign="middle"><img src="images/IMG_76.gif"></td>
+              <td bgcolor="#F3F4F4" width="663" align="center" valign="middle">
+              <table width="657" height="40" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+			    <td bgcolor="#ebebeb" width="2">&nbsp;</td>
+                <td bgcolor="#ebebeb" valign="middle"><a href="http://www.tst.org.mo/" target="_blank"><img src="images/TungSinTong.jpg"></a><a href="http://www.kwnc.edu.mo/baba/" target="_blank"><img src="images/kwnc.jpg"></a><a href="http://www.zsph.com" target="_blank"><img src="images/yh.png"></a><a href="http://www.gzsums.net" target="_blank"><img src="images/zsyy.jpg"></a></td>
+              </tr>
+            </table>            </td>
+            </tr>
+          </table--></td>
+          </tr>
+		  <tr>
+          <td height="10" bgcolor="#F3F4F4"></td>
+          </tr>
+	</table></td>
+    <td width="7" rowspan="10">&nbsp;</td>
+  </tr>
+</table>
+</tr>
+</table>
+
+</div>
+
+<div id="botton">
+	<table width="959" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+  	    <td height="5" >&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+        <table width="959" border="0" cellspacing="0" cellpadding="0" style="color:#0066FF;">
+          <tr>
+  	        <td style="padding-left:20px;" width="12%"><strong>友情鏈接:</strong></td>
+            <td width="22%"><a href="http://www.tst.org.mo/" target="_blank">澳門同善堂</a></td>
+            <td width="22%"><a href="http://www.kwnc.edu.mo/baba/" target="_blank">仁·愛晚晴</a></td>
+            <td width="22%"><a href="http://www.zsph.com" target="_blank">中山市人民醫院</a></td>
+            <td width="22%"><a href="http://zssom.sysu.edu.cn/" target="_blank">中山大學中山醫學院</a></td>
+          </tr>
+          <tr>
+            <td width="12%"></td>
+            <td width="22%"><a href="http://www.csmu.edu.tw/" target="_blank">台灣中山醫學大學</a></td>
+            <td width="22%"><a href="http://www.zshospital.com/" target="_blank">復旦大學附屬中山醫院</a></td>
+            <td width="22%"><a href="http://www.gzsums.net/" target="_blank">中山大學附屬第一醫院</a></td>
+            <td width="22%"><a href="http://www.syshospital.com/" target="_blank">中山大學附屬第二醫院</a></td>
+          </tr>
+          <tr>
+            <td width="12%"></td>
+            <td width="22%"><a href="http://www.zssy.com.cn/" target="_blank">中山大學附屬第三醫院</a></td>
+            <td width="22%"><a href="http://www.zsufivehos.com/2010/index.asp" target="_blank">中山大學附屬第五醫院</a></td>
+            <td width="22%"><a href="http://www.zs6y.com/" target="_blank">中山大學附屬第六醫院</a></td>
+            <td width="22%"><a href="http://w2.csh.org.tw/web/csh/Official/" target="_blank">台灣中山醫學大學附設醫院</a></td>
+          </tr>
+          <tr>
+            <td width="12%"></td>
+            <td width="22%"><a href="http://www.dlhospital.net/" target="_blank">大連大學附屬中山醫院</a></td>
+            <td width="22%"><a href="http://www.xmzsh.com/" target="_blank">廈門大學附屬中山醫院</a></td>
+            <td width="22%"><a href="http://www.bocmacau.com" target="_blank">中國銀行澳門分行</a></td>
+            <td width="22%"><a href="#" target="_blank"></a></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+	  <tr>
+		<td>﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="959" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+    <td width="7">&nbsp;</td>
+    <td><table width="894" height="79" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="184" rowspan="2" align="right" valign="middle"><img src="images/index_116.gif" width="65" height="71">&nbsp;&nbsp;&nbsp;</td>
+    <td width="670" align="left" valign="bottom" class="font"><p>Copyright (c) 2008 Kiang Wu Hospital. All rights reserved.<br>
+      最佳瀏覽效果：IE 6.0 1024 x 768 &nbsp;電話：00853-28371333 &nbsp;地址：鏡湖醫院位於澳門連勝街<br>
+      傳真：00853-28347752&nbsp;&nbsp; 電郵： prd@kwh.org.mo<br>
+              <br>
+        </p></td>
+  </tr>
+</table></td>
+    <td width="7">&nbsp;</td>
+  </tr>
+</table>
+</body>
+ 
+		</td>
+	  </tr>
+	</table>
+</div>
+</body>
+</html>

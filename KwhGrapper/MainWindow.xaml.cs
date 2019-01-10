@@ -34,6 +34,36 @@ namespace KwhGrapper
             MyCrawler.Instance.CrawlerDoneHandler += Instance_CrawlerDoneHandler;
             MyCrawler.Instance.MailSentCallBackHandler += Instance_MailSentCallBackHandler;
             MyCrawler.Instance.CrawlerStopHandler += Instance_CrawlerStopHandler;
+            MyCrawler.Instance.CrawlerErrHandler += Instance_CrawlerErrHandler;
+
+            this.Closed += MainWindow_Closed;
+        }
+
+        private void MainWindow_Closed(object sender, EventArgs e)
+        {
+            MyCrawler.Instance.Stop();
+        }
+
+        private void LogToUI(string msg)
+        {
+            this.tbx_log.AppendText($"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")} | {msg}\n");
+            this.tbx_log.ScrollToEnd();
+        }
+
+
+        private void Instance_CrawlerErrHandler(object sender, EventArgs e)
+        {
+            this.Dispatcher.BeginInvoke(DispatcherPriority.Background, new EventHandler((x, args) =>
+            {
+                var errArg = x as OnErrorEventArgs;
+                if (null != errArg)
+                {
+                    // 爬虫出错
+                    this.LogToUI($"爬虫出错：{errArg.Exception.Message}");
+
+                    SLogger.Instance.LogErr(errArg.Exception.Message, errArg.Exception);
+                }
+            }), sender, e);
         }
 
         /// <summary>
@@ -50,48 +80,50 @@ namespace KwhGrapper
         private void Instance_CrawlerStopHandler(object sender, EventArgs e)
         {
             SetProcRunState(false);
-            tbx_log.AppendText("爬虫已停止...\n");
+            this.LogToUI($"爬虫已停止,{sender.ToString()}");
         }
 
         private void Instance_MailSentCallBackHandler(object sender, EventArgs e)
         {
-            this.Dispatcher.BeginInvoke(DispatcherPriority.Background, new EventHandler((x, args) => {
-
+            this.Dispatcher.BeginInvoke(DispatcherPriority.Background, new EventHandler((x, args) =>
+            {
                 var sndMailBody = x.ToString();
 
-                this.tbx_log.AppendText("申请邮件已发送...");
+                this.LogToUI("申请邮件已发送...");
 
                 SLogger.Instance.LogInfo(string.Format($"申请邮件已发送...\n{sndMailBody}\n"));
-            }), null);
+            }), sender, null);
         }
+
+        static DateTime dtLast = DateTime.Now.AddMinutes(-10);
+        static long doneCounter = 0;
 
         private void Instance_CrawlerDoneHandler(object sender, EventArgs e)
         {
-            this.Dispatcher.BeginInvoke(DispatcherPriority.Background, new EventHandler((x, args) => {
+            doneCounter++;
+            this.Dispatcher.BeginInvoke(DispatcherPriority.Background, new EventHandler((x, args) =>
+            {
                 var complateArg = x as OnCompletedEventArgs;
                 if (null != complateArg)
                 {
-                    // 爬虫成功
-                    this.tbx_log.AppendText("爬虫完成任务...");
+                    if((DateTime.Now - dtLast).TotalMinutes >= 10)
+                    {
+                        // 爬虫成功
+                        this.LogToUI($"服务运行正常，当前总抓取次数：{doneCounter}...");
+                        dtLast = DateTime.Now;
+                    }
                 }
-
-                var errArg = x as OnErrorEventArgs;
-                if(null != errArg)
-                {
-                    // 爬虫出错
-                    this.tbx_log.AppendText($"爬虫出错：{errArg.Exception.Message}");
-
-                    SLogger.Instance.LogErr(errArg.Exception.Message, errArg.Exception);
-                }
-            }), null);
+            }), sender, e);
         }
 
         private void btn_start_Click(object sender, RoutedEventArgs e)
         {
             SetProcRunState(true);
+            //MyCrawler.Instance.StartInLoop();                       
             this.Dispatcher.BeginInvoke(DispatcherPriority.Background, new EventHandler((x, args) => {
                 MyCrawler.Instance.StartInLoop();
-            }), null);
+            }), null,null);
+            
         }
 
         private void btn_stop_Click(object sender, RoutedEventArgs e)
